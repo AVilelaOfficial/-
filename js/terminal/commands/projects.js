@@ -2,7 +2,7 @@ export default {
   name: 'projects',
   description: 'Returns a list of GitHub repositories I have contributed to.',
   execute: async (terminal, args) => {
-    const githubUsername = 'MartinPJB';
+    const githubUsername = 'AVilelaOfficial';
     const githubUrl = `https://api.github.com/users/${githubUsername}/repos`;
 
     terminal.printLn('Fetching projects...', true);
