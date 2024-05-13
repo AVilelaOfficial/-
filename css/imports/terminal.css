@@ -1,0 +1,133 @@
+::-moz-selection {
+  color: black;
+  background: white;
+}
+
+::selection {
+  color: black;
+  background: white;
+}
+
+html {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000000;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: radial-gradient(#231d2c, #0e0416);
+  color: white;
+  font-size: 14px;
+  font-family: Courier, monospace;
+}
+
+/* Analog lines */
+body::before {
+  content: '';
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background:
+      repeating-linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0) 0,
+      rgba(0, 0, 0, 0.3) 50%,
+      rgba(0, 0, 0, 0) 100%);
+  background-size: auto 4px;
+  mix-blend-mode: overlay;
+  pointer-events: none;
+}
+
+/* Static effect */
+body::after {
+  content: '';
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(../../img/random_static.gif);
+  background-repeat: repeat;
+  mix-blend-mode: overlay;
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+/* Terminal and its elements */
+#terminal {
+  padding: 2rem 0;
+}
+
+.terminal-ul {
+  list-style: none;
+}
+
+.terminal-ul li {
+  font-family: Courier, monospace;
+  white-space: pre;
+  padding-left: 1em;
+  text-indent: -1.5em;
+
+  padding-right: 1rem;
+  text-wrap: balance; /* Not supported everywhere */
+  white-space: pre-wrap;
+}
+.terminal-ul li.no-mb {
+  text-indent: -.3rem;
+}
+.terminal-ul li:not(.no-mb) {
+  margin-top: 1.25rem;
+  font-weight: bold;
+  opacity: 0.8;
+}
+
+.terminal-ul li.no-mb::before {
+  content: '';
+  padding-right: 5px;
+}
+
+.terminal-ul li:before {
+  content: '$ ';
+  padding-right: 5px;
+}
+
+.terminal-input {
+  width: 99%;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: white;
+  font-size: 1rem;
+  font-family: Courier, monospace;
+  caret-shape: block;
+}
+
+.terminal-argument {
+  opacity: .8;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.terminal-argument .required {
+  color: red;
+}
+
+/* HTML */
+a, a:visited {
+  font-weight: bold;
+  color: white;
+  text-decoration: underline;
+}
+a:hover {
+  background-color: white;
+  color: black;
+}
